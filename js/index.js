@@ -332,11 +332,8 @@ function coleseko(){
         let do11 = 0;
         let do21 = 0;
         let do31 = 0;
-    function Colesofortuni(){
-        let i = Math.floor(Math.random() * (37 - 1)) + 1;
-
         chet.addEventListener(`click`, function(){
-            if(het==0 && input.value!=``&& input.value<= nochit){
+            if(het==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 het1=input.value;
                 nochit = nochit-input.value;
                 het++
@@ -347,7 +344,7 @@ function coleseko(){
         });
     
         black.addEventListener(`click`, function(){
-            if(bla==0 && input.value!=`` && input.value<= nochit){
+            if(bla==0 && input.value!=`` && input.value<= nochit && input.value!=0){
                 bla1=input.value;
                 nochit = nochit-input.value;
                 bla++
@@ -357,7 +354,7 @@ function coleseko(){
             }
         });
         red.addEventListener(`click`, function(){
-            if(re==0 && input.value!=``&& input.value<= nochit){
+            if(re==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 re1=input.value;
                 nochit = nochit-input.value;
                 re++
@@ -369,7 +366,7 @@ function coleseko(){
 
     
         do12.addEventListener(`click`, function(){
-            if(do1==0 && input.value!=``&& input.value<= nochit){
+            if(do1==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 do11=input.value;
                 nochit = nochit-input.value;
                 do1++;
@@ -379,7 +376,7 @@ function coleseko(){
             }
         });
         do24.addEventListener(`click`, function(){
-            if(do2==0 && input.value!=``&& input.value<= nochit){
+            if(do2==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 do21=input.value;
                 nochit = nochit-input.value;
                 do2++;
@@ -389,7 +386,7 @@ function coleseko(){
             }
         });
         do36.addEventListener(`click`, function(){
-            if(do3==0 && input.value!=``&& input.value<= nochit){
+            if(do3==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 do31=input.value;
                 nochit = nochit-input.value;
                 do3++
@@ -399,6 +396,10 @@ function coleseko(){
             }
         });
 
+    function Colesofortuni(){
+        let i = Math.floor(Math.random() * (37 - 1)) + 1;
+
+        
         setTimeout(function(){
         
             number.innerHTML=`<img class="start" src="./assets/coleso/${i}.jpg">`
