@@ -38,18 +38,8 @@ let av22 = 0;
 let av32 = 0;
 let av42 = 0;
 let av52 = 0;
-function avbafmag(){
-    let av1 = document.querySelector(`#av1`);
-    let av2 = document.querySelector(`#av2`);
-    let av3 = document.querySelector(`#av3`);
-    let av4 = document.querySelector(`#av4`);
-    let av5 = document.querySelector(`#av5`);
+
     
-    let av11 = document.querySelector(`#av11`);
-    let av21 = document.querySelector(`#av21`);
-    let av31 = document.querySelector(`#av31`);
-    let av41 = document.querySelector(`#av41`);
-    let av51 = document.querySelector(`#av51`);
     av1.addEventListener(`click`, function(){
         if(nochit >= 300){
             nochit = nochit-300;
@@ -140,8 +130,6 @@ function avbafmag(){
         pec1.innerHTML = `у вас ${nochit} печенек`;
         }
     },1000);
-}
-function nachalo(){
 
 
 
@@ -149,25 +137,14 @@ function nachalo(){
 
 
 
-let on2 = 0;
-let to2 = 0;
-let fr2 = 0;
-let fo2 = 0;
-let fi2 = 0;
-pec.innerHTML = `у вас ${nochit} печенек`;
 
 
-let av12 = 0;
-let av22 = 0;
-let av32 = 0;
-let av42 = 0;
-let av52 = 0;
 
 let avbaf = (av12*1)+(av22*5)+(av32*20)+(av42*100)+(av52*500);
 id1.innerHTML = `в сек вы получаете ${avbaf} печенек`;
 
 
-avbafmag()
+
 
 
 
@@ -184,7 +161,10 @@ let fo1 = document.querySelector(`#fo1`);
 let fi1 = document.querySelector(`#fi1`);
 
 
-game1.addEventListener(`click`, coleseko);
+game1.addEventListener(`click`, function(){
+    container.classList.add(`d-none`)
+cole.classList.remove(`d-none`)
+})
 
 on.addEventListener(`click`, function(){
     if(nochit >= 150){
@@ -279,12 +259,12 @@ cookieNode.addEventListener(`click`, function(){
     
     id.innerHTML = `за 1 клик вы получаете ${baf} печенек`
 });
-}
-nachalo()
+
+
 
 let game11 = 0;
 
-function coleseko(){
+
     let back= document.querySelector(`#back`);
         
         back.addEventListener(`click`, function(){
@@ -294,11 +274,13 @@ function coleseko(){
         cole.classList.add(`d-none`)
         });
     
-    function coleso(){
-        game11++
-    container.classList.add(`d-none`)
+    
+        game1.addEventListener(`click`, function(){
+            container.classList.add(`d-none`)
     cole.classList.remove(`d-none`)
-    if(game11==1){
+        })
+    
+    
         let number = document.querySelector(`#number`);
         let start = document.querySelector(`#start`);
         let input = document.querySelector(`#input`)
@@ -396,122 +378,136 @@ function coleseko(){
             }
         });
 
-    function Colesofortuni(){
-        let i = Math.floor(Math.random() * (37 - 1)) + 1;
+    
+    
+        
+      
 
-        
-        setTimeout(function(){
-        
-            number.innerHTML=`<img class="start" src="./assets/coleso/${i}.jpg">`
-            if(het==1){
-                het=0;
-            
-        
-                if(i==2 || i==4 ||i==6 || i==8 ||i==10 || i==12 ||i==14 || i==16 ||i==18 || i==20 ||i==22 || i==24 ||i==26 || i==28 ||i==30 || i==32 ||i==34 || i==36){
-                    het1=het1*2;
-                    nochit = nochit+het1;
-                    resultNode1.innerHTML = nochit + ` печенек`;
-                    resultNode.innerHTML=nochit + ` печенек`;
-                    st1.innerHTML=`ставка чётное выйграла. `;
-                    
-                }else{
-                
-                    st1.innerHTML=`ставка чётное проиграла. `;
-                }
-            }
-            if(nohet==1){
-                nochet=0;
-                
-        
-                if(i==1 || i==3 ||i==5 || i==7 ||i==9 || i==11 ||i==13 || i==15 ||i==17 || i==19 ||i==21 || i==23 ||i==25 || i==27 ||i==29 || i==31 ||i==33 || i==35){
-                    nohet1=nohet*2;
-                    nochit = nochit+nohet1;
-                    resultNode1.innerHTML = nochit + ` печенек`;
-                    resultNode.innerHTML=nochit + ` печенек`;
-                    st2.innerHTML=`ставка нечётное выйграла. `;
-            }else{
-                
-                    st2.innerHTML=`ставка нечётное проиграла. `;
-                }
-            }
-            if(bla==1){
-                bla=0;
-            
-        
-                if(i==1 || i==3 ||i==5 || i==7 ||i==9 || i==11 ||i==13 || i==15 ||i==17 || i==19 ||i==21 || i==23 ||i==25 || i==27 ||i==29 || i==31 ||i==33 || i==35){
-                    bla1=bla1*2;
-                    nochit = nochit+bla1;
-                    resultNode1.innerHTML = nochit + ` печенек`;
-                    resultNode.innerHTML=nochit + ` печенек`;
-                    st3.innerHTML=`ставка чёрное выйграла. `;
-                }else{
-                
-                    st3.innerHTML=`ставка чёрное проиграла. `;
-                }
-            }
-            if(re==1){
-                re=0;
-            
-        
-                if(i==2 || i==4 ||i==6 || i==8 ||i==10 || i==12 ||i==14 || i==16 ||i==18 || i==20 ||i==22 || i==24 ||i==26 || i==28 ||i==30 || i==32 ||i==34 || i==36){
-                    re1=re1*2;
-                    nochit = nochit+re1;
-                    resultNode1.innerHTML = nochit + ` печенек`;
-                    resultNode.innerHTML=nochit + ` печенек`;
-                    st4.innerHTML=`ставка красное выйграла. `;
-                }else{
-                
-                  st4.innerHTML=`ставка красное проиграла. `;
-                }
-            }
+    
+    
 
-            if(do1==1){
-            
-            
-             do1=0;
-              if(i<=12){
-                    do11=do11*3;
-                    nochit = nochit+do11;
-                    resultNode1.innerHTML = nochit + ` печенек`;
-                    resultNode.innerHTML=nochit + ` печенек`;
-                    st5.innerHTML=`ставка от 1 до 12 выйграла. `;
-              }else{
-                
-                st5.innerHTML=`ставка от 1 до 12 проиграла. `;
-               }
-         }
-           if(do2==1){
-               do2=0;
-            
+
+    
+
+function Colesofortuni(){
+    let i = Math.floor(Math.random() * (37 - 1)) + 1;
+
+    
+    setTimeout(function(){
+    
+        number.innerHTML=`<img class="start" src="./assets/coleso/${i}.jpg">`
+        if(het==1){
+            het=0;
         
-                if(i>=13 && i<=24){
-                    do21=do21*3;
-                    nochit = nochit+do21;
-                    resultNode1.innerHTML = nochit + ` печенек`;
-                    resultNode.innerHTML=nochit + ` печенек`;
-                  st6.innerHTML=`ставка от 13 до 24 выйграла. `;
-               }else{
-                
-                    st6.innerHTML=`ставка от 13 до 24 проиграла. `;
-                }
-           }
-         if(do3==1){
-                do3=0;
-            
-             if(i<=36 && i>=25){
-                do31=do31*3;
-                nochit = nochit+do31;
+    
+            if(i%2==0){
+                het1=het1*2;
+                nochit = nochit+het1;
                 resultNode1.innerHTML = nochit + ` печенек`;
-                    resultNode.innerHTML=nochit + ` печенек`;
-                 st7.innerHTML=`ставка от 25 до 36 выйграла. `;
-              }else{
+                resultNode.innerHTML=nochit + ` печенек`;
+                st1.innerHTML=`ставка чётное выйграла. `;
                 
-                  st7.innerHTML=`ставка от 25 до 36 проиграла. `;
-              }
+            }else{
+            
+                st1.innerHTML=`ставка чётное проиграла. `;
+            }
+        }
+        if(nohet==1){
+            nochet=0;
+            
+    
+            if(i%2!=0){
+                nohet1=nohet*2;
+                nochit = nochit+nohet1;
+                resultNode1.innerHTML = nochit + ` печенек`;
+                resultNode.innerHTML=nochit + ` печенек`;
+                st2.innerHTML=`ставка нечётное выйграла. `;
+        }else{
+            
+                st2.innerHTML=`ставка нечётное проиграла. `;
+            }
+        }
+        if(bla==1){
+            bla=0;
+        
+    
+            if(i%2!=0){
+                bla1=bla1*2;
+                nochit = nochit+bla1;
+                resultNode1.innerHTML = nochit + ` печенек`;
+                resultNode.innerHTML=nochit + ` печенек`;
+                st3.innerHTML=`ставка чёрное выйграла. `;
+            }else{
+            
+                st3.innerHTML=`ставка чёрное проиграла. `;
+            }
+        }
+        if(re==1){
+            re=0;
+        
+    
+            if(i%2==0){
+                re1=re1*2;
+                nochit = nochit+re1;
+                resultNode1.innerHTML = nochit + ` печенек`;
+                resultNode.innerHTML=nochit + ` печенек`;
+                st4.innerHTML=`ставка красное выйграла. `;
+            }else{
+            
+              st4.innerHTML=`ставка красное проиграла. `;
+            }
+        }
+
+        if(do1==1){
+        
+        
+         do1=0;
+          if(i<=12){
+                do11=do11*3;
+                nochit = nochit+do11;
+                resultNode1.innerHTML = nochit + ` печенек`;
+                resultNode.innerHTML=nochit + ` печенек`;
+                st5.innerHTML=`ставка от 1 до 12 выйграла. `;
+          }else{
+            
+            st5.innerHTML=`ставка от 1 до 12 проиграла. `;
+           }
+     }
+       if(do2==1){
+           do2=0;
+        
+    
+            if(i>=13 && i<=24){
+                do21=do21*3;
+                nochit = nochit+do21;
+                resultNode1.innerHTML = nochit + ` печенек`;
+                resultNode.innerHTML=nochit + ` печенек`;
+              st6.innerHTML=`ставка от 13 до 24 выйграла. `;
+           }else{
+            
+                st6.innerHTML=`ставка от 13 до 24 проиграла. `;
+            }
+       }
+     if(do3==1){
+            do3=0;
+        
+         if(i<=36 && i>=25){
+            do31=do31*3;
+            nochit = nochit+do31;
+            resultNode1.innerHTML = nochit + ` печенек`;
+                resultNode.innerHTML=nochit + ` печенек`;
+             st7.innerHTML=`ставка от 25 до 36 выйграла. `;
+          }else{
+            
+              st7.innerHTML=`ставка от 25 до 36 проиграла. `;
           }
-        }, 20000)}
-    if(game11==1){
-        Colesofortuni()
+      }
+    }, 20000)}
+
+    
+
+
+Colesofortuni()
         setInterval(Colesofortuni, 30000)
     
         setInterval(function(){
@@ -534,19 +530,6 @@ function coleseko(){
             resultNode.innerHTML=nochit + ` печенек`;
             }
         });
-    }
-    }
-    }
-        
-      
-
-    
-    
-
-    coleso()
-    
-}
-
 
 
 
