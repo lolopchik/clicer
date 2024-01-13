@@ -20,3 +20,20 @@
 .container img {
     width: 300px;
 }
+#button {
+	display: flex;
+} 
+.start {
+	height: 300px;
+	width: 300px;
+}
+.input{
+	width: 50%;
+	border: 1px black solid;
+	margin: 10px;
+}
+#str{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}

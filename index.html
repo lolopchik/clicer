@@ -10,62 +10,122 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="css/index.css" />
-    <script src="js/index.js" defer></script>
+    <script  src="js/index.js"  defer></script>
 </head>
 
 <body>
     <div class="container">
         <h1>Куки-кликер</h1>
 
-        <img src="assets/cookie.jpg" alt="печенька" id="cookie">
+        <div id="schet"><img src="assets/cookie.jpg" alt="печенька" id="cookie"></div>
         <h2 id="result">0 печенек</h2>
-        <button id="mag" type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">магазин кликер</button>
-        <button  type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">магазин автокликер</button>
+        <div id="str" class="">
+          <div id="button">
+            <button  type="button" class="btn btn-outline-primary mag" data-bs-toggle="modal" data-bs-target="#exampleModal">магазин кликер</button>
+            <button  type="button" class="btn btn-outline-primary mag" data-bs-toggle="modal" data-bs-target="#exampleModal1">магазин автокликер</button>
+          </div>
+          <button  type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">мини игры</button>
+          <section>
+            <div ><div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">мини игры</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                 <div><h5>Колесо Фортуны</h5> <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" id="game1">Играть</button></div>
+                 <div><h5>Скоро выйдет</h5> <button type="button" class="btn btn-outline-primary">скоро выйдет</button></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary"data-bs-dismiss="modal">закрыть</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </section>
+        <div > 
         <section>
-          <div id="text"><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">меню магазина кликера <p id="pec"></p><div id="id"></div></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-               <div><h5> новогодняя палочка. +1 клик <p>Цена: 150 печенек</p><p id="on1">кол-во 0</p></h5> <button id="on" type="button" class="btn btn-outline-primary">купить</button></div>
-               <div><h5> леденец. +5 клик <p>Цена: 600 печенек</p><p id="to1">кол-во 0</p></h5> <button id="to" type="button" class="btn btn-outline-primary">купить</button></div>
-               <div><h5> посох деда мороза. +20 клик <p>Цена: 2.250 печенек</p><p id="fr1">кол-во 0</p></h5> <button id="fr" type="button" class="btn btn-outline-primary">купить</button></div>
-               <div><h5> дополнительные руки. +100 клик <p>Цена: 11.000 печенек</p><p id="fo1">кол-во 0</p></h5> <button id="fo" type="button" class="btn btn-outline-primary">купить</button></div>
-               <div><h5> руки базуки. +500 клик <p>Цена: 50.000 печенек</p><p id="fi1">кол-во 0</p></h5> <button id="fi" type="button" class="btn btn-outline-primary">купить</button></div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary"data-bs-dismiss="modal">закрыть магазин</button>
-              </div>
+        <div id="text"><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">меню магазина кликера <p id="pec"></p><div id="id"></div></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+             <div><h5> новогодняя палочка. +1 клик <p>Цена: 150 печенек</p><p id="on1">кол-во 0</p></h5> <button id="on" type="button" class="btn btn-outline-primary">купить</button></div>
+             <div><h5> леденец. +5 клик <p>Цена: 600 печенек</p><p id="to1">кол-во 0</p></h5> <button id="to" type="button" class="btn btn-outline-primary">купить</button></div>
+             <div><h5> посох деда мороза. +20 клик <p>Цена: 2.250 печенек</p><p id="fr1">кол-во 0</p></h5> <button id="fr" type="button" class="btn btn-outline-primary">купить</button></div>
+             <div><h5> дополнительные руки. +100 клик <p>Цена: 11.000 печенек</p><p id="fo1">кол-во 0</p></h5> <button id="fo" type="button" class="btn btn-outline-primary">купить</button></div>
+             <div><h5> руки базуки. +500 клик <p>Цена: 50.000 печенек</p><p id="fi1">кол-во 0</p></h5> <button id="fi" type="button" class="btn btn-outline-primary">купить</button></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary"data-bs-dismiss="modal">закрыть магазин</button>
             </div>
           </div>
         </div>
-      </section>
-        <section><div ><div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel1">меню магазина автокликера <p id="pec1"></p><div id="id1"></div></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-               <div><h5> гном. +1 в сек <p>Цена: 300 печенек</p><p id="av11">кол-во 0</p></h5> <button id="av1" type="button" class="btn btn-outline-primary">купить</button></div>
-               <div><h5> олени. +5 в сек <p>Цена: 1.200 печенек</p><p id="av21">кол-во 0</p></h5> <button id="av2" type="button" class="btn btn-outline-primary">купить</button></div>
-               <div><h5> ферма. +20 в сек <p>Цена: 5.500 печенек</p><p id="av31">кол-во 0</p></h5> <button id="av3" type="button" class="btn btn-outline-primary">купить</button></div>
-               <div><h5> Новый год. +100 в сек <p>Цена: 22.000 печенек</p><p id="av41">кол-во 0</p></h5> <button id="av4" type="button" class="btn btn-outline-primary">купить</button></div>
-               <div><h5> Дед мороз. +500 в сек <p>Цена: 100.000 печенек</p><p id="av51">кол-во 0</p></h5> <button id="av5" type="button" class="btn btn-outline-primary">купить</button></div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary"data-bs-dismiss="modal">закрыть магазин</button>
-              </div>
+      </div>
+    </section>
+      <section><div ><div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel1">меню магазина автокликера <p id="pec1"></p><div id="id1"></div></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+             <div><h5> гном. +1 в сек <p>Цена: 300 печенек</p><p id="av11">кол-во 0</p></h5> <button id="av1" type="button" class="btn btn-outline-primary">купить</button></div>
+             <div><h5> олени. +5 в сек <p>Цена: 1.200 печенек</p><p id="av21">кол-во 0</p></h5> <button id="av2" type="button" class="btn btn-outline-primary">купить</button></div>
+             <div><h5> ферма. +20 в сек <p>Цена: 5.500 печенек</p><p id="av31">кол-во 0</p></h5> <button id="av3" type="button" class="btn btn-outline-primary">купить</button></div>
+             <div><h5> Новый год. +100 в сек <p>Цена: 22.000 печенек</p><p id="av41">кол-во 0</p></h5> <button id="av4" type="button" class="btn btn-outline-primary">купить</button></div>
+             <div><h5> Дед мороз. +500 в сек <p>Цена: 100.000 печенек</p><p id="av51">кол-во 0</p></h5> <button id="av5" type="button" class="btn btn-outline-primary">купить</button></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary"data-bs-dismiss="modal">закрыть магазин</button>
             </div>
           </div>
-        </div></section>
-    </div>
+        </div>
+      </div></section>
     
+    </div>
+        </div>
+        
+    </div>
+    <div id="cole" class="d-none">
+      <div class="container">
+        <h1>Куки-кликер</h1>
+        
+        <h2 >Колесо Фортуны</h2>
+        <h3 id="result1">0 печенек</h3>
+        <div id="number"></div>
+        <h4>
+            <span id="st1"></span>
+            <span id="st2"></span>
+            <span id="st3"></span>
+            <span id="st4"></span>
+            <span id="st5"></span>
+            <span id="st6"></span>
+            <span id="st7"></span>
+        </h4>
+        <p>Чтобы поставить ставку введите число и нажмите кнопку на что ставите.</p>
+        <p>Ставки происходят каждые 30 сек</p>
+        <input type="number" id="input" class="form-control input" placeholder="сюда вводить ставку" aria-label="Recipient's username" aria-describedby="button-addon2" width="100px">
+        <p id="fall">Нельзя повторно ставить ставки и ничего не ставить</p>
+        <section>
+            <button id="chet" type="button" class="btn btn-outline-primary" >чёт Х2</button>
+            <button id="nochet" type="button" class="btn btn-outline-primary" >не чёт Х2</button>
+            <button id="black" type="button" class="btn btn-outline-primary" >чёрное Х2</button>
+            <button id="red" type="button" class="btn btn-outline-primary" >красное Х2</button>
+            <button id="do12" type="button" class="btn btn-outline-primary" >1 до 12 Х3</button>
+            <button id="do24" type="button" class="btn btn-outline-primary" >13 до 24 Х3</button>
+            <button id="do36" type="button" class="btn btn-outline-primary" >25 до 36 Х3</button>
 
+        </section>
+        <button id="back" type="button" class="btn btn-outline-primary">назад</button>
+    </div>
+    </div>
     
 </body>
 
