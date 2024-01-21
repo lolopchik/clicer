@@ -22,6 +22,20 @@ let av51 = document.querySelector(`#av51`);
 let pec = document.querySelector(`#pec`);
 let pec1 =document.querySelector(`#pec1`)
 
+document.addEventListener(`keydown`, function(evt){
+    console.log(evt.key)
+    if(evt.key== ` `){
+        nochit=nochit+(on2*1)+(to2*5)+(fr2*20)+(fo2*100)+(fi2*500)+1;
+        resultNode.innerHTML = nochit + ` печенек`;
+        resultNode1.innerHTML = nochit + ` печенек`;
+        pec.innerHTML = `у вас ${nochit} печенек`;
+        pec1.innerHTML = `у вас ${nochit} печенек`;
+        let baf = (on2*1)+(to2*5)+(fr2*20)+(fo2*100)+(fi2*500)+1;
+        
+        id.innerHTML = `за 1 клик вы получаете ${baf} печенек`
+    }
+})
+
 
 
 let on2 = 0;
