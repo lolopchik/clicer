@@ -38,25 +38,56 @@ document.addEventListener(`keydown`, function(evt){
 
 
 
-let on2 = 0;
-let to2 = 0;
-let fr2 = 0;
-let fo2 = 0;
-let fi2 = 0;
-let nochit = 0;
+
+
+
+let nochit = localStorage.getItem("pehenki");
+
+resultNode.innerHTML =  nochit+ ` печенек`;
+function save(value){
+    nochit=Number(value) + Number(nochit)
+    localStorage.setItem("pehenki", nochit)
+}
+
+
+
 pec.innerHTML = `у вас ${nochit} печенек`;
 
-
-let av12 = 0;
-let av22 = 0;
-let av32 = 0;
-let av42 = 0;
-let av52 = 0;
-
+let on2 = Number(localStorage.getItem("on2"));
+let to2 = Number(localStorage.getItem("to2"));
+let fr2 = Number(localStorage.getItem("fr2"));
+let fo2 = Number(localStorage.getItem("fo2"));
+let fi2 = Number(localStorage.getItem("fi2"));
+let av12 = Number(localStorage.getItem("av12"));
+let av22 = Number(localStorage.getItem("av22"));
+let av32 = Number(localStorage.getItem("av32"));
+let av42 = Number(localStorage.getItem("av42"));
+let av52 = Number(localStorage.getItem("av52"));
+window.addEventListener('beforeunload', function(event){
     
-    av1.addEventListener(`click`, function(){
+    localStorage.setItem("on2", on2);
+    localStorage.setItem("to2", to2);
+    localStorage.setItem("fr2", fr2);
+    localStorage.setItem("fo2", fo2);
+    localStorage.setItem("fi2", fi2);
+    localStorage.setItem("av12", av12);
+    localStorage.setItem("av22", av22);
+    localStorage.setItem("av32", av32);
+    localStorage.setItem("av42", av42);
+    localStorage.setItem("av52", av52);
+    
+});
+
+
+av51.innerHTML = `кол-во ${av52}`;
+av41.innerHTML = `кол-во ${av42}`;
+av31.innerHTML = `кол-во ${av32}`;
+av21.innerHTML = `кол-во ${av22}`;
+av11.innerHTML = `кол-во ${av12}`;
+
+av1.addEventListener(`click`, function(){
         if(nochit >= 300){
-            nochit = nochit-300;
+            save(-300);
             av12 = av12+1;
             resultNode1.innerHTML = nochit+ ` печенек`;
             resultNode.innerHTML =  nochit+ ` печенек`;
@@ -73,7 +104,7 @@ let av52 = 0;
     
     av2.addEventListener(`click`, function(){
         if(nochit >= 1200){
-            nochit = nochit-1200;
+            save(-1200);
             av22 = av22+1;
             resultNode1.innerHTML = nochit+ ` печенек`;
             resultNode.innerHTML =  nochit+ ` печенек`;
@@ -88,7 +119,7 @@ let av52 = 0;
     });
     av3.addEventListener(`click`, function(){
         if(nochit >= 5500){
-            nochit = nochit-5500;
+            save(-5500);
             av32 = av32+1;
             resultNode1.innerHTML = nochit+ ` печенек`;
             resultNode.innerHTML =  nochit+ ` печенек`;
@@ -104,7 +135,7 @@ let av52 = 0;
     
     av4.addEventListener(`click`, function(){
         if(nochit >= 22000){
-            nochit = nochit-22000;
+            save(-22000);
             av42 = av42+1;
             resultNode1.innerHTML = nochit+ ` печенек`;
             resultNode.innerHTML =  nochit+ ` печенек`;
@@ -120,7 +151,7 @@ let av52 = 0;
     
     av5.addEventListener(`click`, function(){
         if(nochit >= 100000){
-            nochit = nochit-100000;
+            save(-100000);
             av52 = av52+1;
             resultNode1.innerHTML = nochit+ ` печенек`;
             resultNode.innerHTML =  nochit+ ` печенек`;
@@ -137,7 +168,7 @@ let av52 = 0;
         let avbaf = (av12*1)+(av22*5)+(av32*20)+(av42*100)+(av52*500);
         if(avbaf!=0){
             
-            nochit= nochit+avbaf;
+            save(avbaf);
             resultNode1.innerHTML = nochit + ` печенек`;
             resultNode.innerHTML=nochit + ` печенек`;
             pec.innerHTML = `у вас ${nochit} печенек`;
@@ -180,9 +211,17 @@ game1.addEventListener(`click`, function(){
 cole.classList.remove(`d-none`)
 })
 
+on1.innerHTML = `кол-во ${on2}`;
+to1.innerHTML = `кол-во ${to2}`;
+fr1.innerHTML = `кол-во ${fr2}`;
+fo1.innerHTML = `кол-во ${fo2}`;
+fi1.innerHTML = `кол-во ${fi2}`;
+let id = document.querySelector(`#id`);
+let baf = (on2*1)+(to2*5)+(fr2*20)+(fo2*100)+(fi2*500)+1;
+id.innerHTML = `за 1 клик вы получаете ${baf} печенек`
 on.addEventListener(`click`, function(){
     if(nochit >= 150){
-        nochit = nochit-150;
+        save(-150);
         on2 = on2+1;
         resultNode1.innerHTML = nochit+ ` печенек`;
         resultNode.innerHTML =  nochit+ ` печенек`;
@@ -198,7 +237,7 @@ on.addEventListener(`click`, function(){
 
 to.addEventListener(`click`, function(){
     if(nochit >= 600){
-        nochit = nochit-600;
+        save(-600);
         to2 = to2+1;
         resultNode1.innerHTML = nochit+ ` печенек`;
         resultNode.innerHTML =  nochit+ ` печенек`;
@@ -214,7 +253,7 @@ to.addEventListener(`click`, function(){
 
 fr.addEventListener(`click`, function(){
     if(nochit >= 2250){
-        nochit = nochit-2250;
+        save(-2250);
         fr2 = fr2+1;
         resultNode1.innerHTML = nochit+ ` печенек`;
         resultNode.innerHTML =  nochit+ ` печенек`;
@@ -230,7 +269,7 @@ fr.addEventListener(`click`, function(){
 
 fo.addEventListener(`click`, function(){
     if(nochit >= 11000){
-        nochit = nochit-11000;
+        save(-11000);
         fo2 = fo2+1;
         resultNode1.innerHTML = nochit+ ` печенек`;
         resultNode.innerHTML =  nochit+ ` печенек`;
@@ -246,7 +285,7 @@ fo.addEventListener(`click`, function(){
 
 fi.addEventListener(`click`, function(){
     if(nochit >= 50000){
-        nochit = nochit-50000;
+        save(-50000);
         fi2 = fi2+1;
         resultNode1.innerHTML = nochit+ ` печенек`;
         resultNode.innerHTML =  nochit+ ` печенек`;
@@ -261,10 +300,10 @@ fi.addEventListener(`click`, function(){
 });
 
 
-let id = document.querySelector(`#id`);
+
 
 cookieNode.addEventListener(`click`, function(){
-    nochit=nochit+(on2*1)+(to2*5)+(fr2*20)+(fo2*100)+(fi2*500)+1;
+    save((on2*1)+(to2*5)+(fr2*20)+(fo2*100)+(fi2*500)+1);
     resultNode.innerHTML = nochit + ` печенек`;
     resultNode1.innerHTML = nochit + ` печенек`;
     pec.innerHTML = `у вас ${nochit} печенек`;
@@ -291,7 +330,7 @@ let game11 = 0;
     
         game1.addEventListener(`click`, function(){
             container.classList.add(`d-none`)
-    cole.classList.remove(`d-none`)
+            cole.classList.remove(`d-none`)
         })
     
     
@@ -331,7 +370,7 @@ let game11 = 0;
         chet.addEventListener(`click`, function(){
             if(het==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 het1=input.value;
-                nochit = nochit-input.value;
+                save(-input.value);
                 het++
                 input.value =0;
                 resultNode1.innerHTML = nochit + ` печенек`;
@@ -342,7 +381,7 @@ let game11 = 0;
         black.addEventListener(`click`, function(){
             if(bla==0 && input.value!=`` && input.value<= nochit && input.value!=0){
                 bla1=input.value;
-                nochit = nochit-input.value;
+                save(-input.value);
                 bla++
                 input.value =0;
                 resultNode1.innerHTML = nochit + ` печенек`;
@@ -352,7 +391,7 @@ let game11 = 0;
         red.addEventListener(`click`, function(){
             if(re==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 re1=input.value;
-                nochit = nochit-input.value;
+                save(-input.value);
                 re++
                 input.value =0;
                 resultNode1.innerHTML = nochit + ` печенек`;
@@ -364,7 +403,7 @@ let game11 = 0;
         do12.addEventListener(`click`, function(){
             if(do1==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 do11=input.value;
-                nochit = nochit-input.value;
+                save(-input.value);
                 do1++;
                 input.value =0;
                 resultNode1.innerHTML = nochit + ` печенек`;
@@ -374,7 +413,7 @@ let game11 = 0;
         do24.addEventListener(`click`, function(){
             if(do2==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 do21=input.value;
-                nochit = nochit-input.value;
+                save(-input.value);
                 do2++;
                 input.value =0;
                 resultNode1.innerHTML = nochit + ` печенек`;
@@ -384,7 +423,7 @@ let game11 = 0;
         do36.addEventListener(`click`, function(){
             if(do3==0 && input.value!=``&& input.value<= nochit && input.value!=0){
                 do31=input.value;
-                nochit = nochit-input.value;
+                save(-input.value);
                 do3++
                 input.value =0;
                 resultNode1.innerHTML = nochit + ` печенек`;
@@ -416,7 +455,7 @@ function Colesofortuni(){
     
             if(i%2==0){
                 het1=het1*2;
-                nochit = nochit+het1;
+                save(het1);
                 resultNode1.innerHTML = nochit + ` печенек`;
                 resultNode.innerHTML=nochit + ` печенек`;
                 st1.innerHTML=`ставка чётное выйграла. `;
@@ -432,7 +471,7 @@ function Colesofortuni(){
     
             if(i%2!=0){
                 nohet1=nohet*2;
-                nochit = nochit+nohet1;
+                save(nohet1);
                 resultNode1.innerHTML = nochit + ` печенек`;
                 resultNode.innerHTML=nochit + ` печенек`;
                 st2.innerHTML=`ставка нечётное выйграла. `;
@@ -447,7 +486,7 @@ function Colesofortuni(){
     
             if(i%2!=0){
                 bla1=bla1*2;
-                nochit = nochit+bla1;
+                save(bla1);
                 resultNode1.innerHTML = nochit + ` печенек`;
                 resultNode.innerHTML=nochit + ` печенек`;
                 st3.innerHTML=`ставка чёрное выйграла. `;
@@ -462,7 +501,7 @@ function Colesofortuni(){
     
             if(i%2==0){
                 re1=re1*2;
-                nochit = nochit+re1;
+                save(re1);
                 resultNode1.innerHTML = nochit + ` печенек`;
                 resultNode.innerHTML=nochit + ` печенек`;
                 st4.innerHTML=`ставка красное выйграла. `;
@@ -478,7 +517,7 @@ function Colesofortuni(){
          do1=0;
           if(i<=12){
                 do11=do11*3;
-                nochit = nochit+do11;
+                save(+do11);
                 resultNode1.innerHTML = nochit + ` печенек`;
                 resultNode.innerHTML=nochit + ` печенек`;
                 st5.innerHTML=`ставка от 1 до 12 выйграла. `;
@@ -493,7 +532,7 @@ function Colesofortuni(){
     
             if(i>=13 && i<=24){
                 do21=do21*3;
-                nochit = nochit+do21;
+                save(do21);
                 resultNode1.innerHTML = nochit + ` печенек`;
                 resultNode.innerHTML=nochit + ` печенек`;
               st6.innerHTML=`ставка от 13 до 24 выйграла. `;
@@ -507,7 +546,7 @@ function Colesofortuni(){
         
          if(i<=36 && i>=25){
             do31=do31*3;
-            nochit = nochit+do31;
+            save(do31);
             resultNode1.innerHTML = nochit + ` печенек`;
                 resultNode.innerHTML=nochit + ` печенек`;
              st7.innerHTML=`ставка от 25 до 36 выйграла. `;
@@ -537,7 +576,7 @@ Colesofortuni()
         nochet.addEventListener(`click`, function(){
            if(nohet==0 && input.value!=``){
             
-            nochit = nochit-input.value;
+            save(-input.value);
             nohet++
             input.value =0;
             resultNode1.innerHTML = nochit + ` печенек`;
